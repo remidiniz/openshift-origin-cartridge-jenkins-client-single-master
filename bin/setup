@@ -7,6 +7,8 @@
 
 
 mkdir -p ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/{logs,data}
+chmod 0755 -R "${OPENSHIFT_HOMEDIR}jenkins-client-single-master/bin/"
+
 #mkdir -p ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/{logs,data}
 
 
