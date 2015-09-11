@@ -2,8 +2,8 @@
 
 # Create additional directories required by JENKINS
 
-echo "https://ci-dev.webreliever.co.uk/" > $OPENSHIFT_HOMEDIRjenkins-client-single-master/env/OPENSHIFT_JENKINS_MASTER_URL
-echo "$OPENSHIFT_HOMEDIRjenkins-client-single-master/" > $OPENSHIFT_HOMEDIRjenkins-client-single-master/env/OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR
+echo "https://ci-dev.webreliever.co.uk/" > ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/env/OPENSHIFT_JENKINS_MASTER_URL
+echo "${OPENSHIFT_HOMEDIR}jenkins-client-single-master/" > ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/env/OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR
 
 
 mkdir -p ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/{logs,data}
