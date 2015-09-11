@@ -1,6 +1,6 @@
 ---
-Name: jenkins-client
-Cartridge-Short-Name: JENKINS_CLIENT
+Name: jenkins-client-single-master
+Cartridge-Short-Name: JENKINS_CLIENT_SINGLE_MASTER
 Display-Name: Jenkins Client Single Master
 Description: The Jenkins client connects to your Jenkins Master application and enables builds
   and testing of your application.
@@ -32,13 +32,13 @@ Website: http://www.jenkins-ci.org
 Help-Topics:
   Documentation: https://github.com/remidiniz/openshift-origin-cartridge-jenkins-client-single-master
 Provides:
-- jenkins-client-1
-- jenkins-client
+- jenkins-client-single-master-1
+- jenkins-client-single-master
 Publishes: 
 Subscribes: 
 Group-Overrides:
 - components:
-  - jenkins-client-1
+  - jenkins-client-single-master-1
   - web_proxy
 Scaling:
   Min: 1
