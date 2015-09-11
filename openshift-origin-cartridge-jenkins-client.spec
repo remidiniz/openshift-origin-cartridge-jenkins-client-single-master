@@ -41,7 +41,7 @@ Provides plugin jenkins client single master support.
 
 %files
 %dir %{cartridgedir}
-%attr(0755,-,-) %{cartridgedir}/bin/*
+%attr(0755, ENV['OPENSHIFT_APP_UUID'], ENV['OPENSHIFT_APP_UUID']) %{cartridgedir}/bin/*
 %{cartridgedir}/configuration
 %{cartridgedir}/metadata
 %doc %{cartridgedir}/README.md
