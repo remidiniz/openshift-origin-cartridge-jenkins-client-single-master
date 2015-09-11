@@ -7,7 +7,7 @@ function post_receive() {
   echo
   echo "You can track your build at ${OPENSHIFT_JENKINS_MASTER_URL}job/${OPENSHIFT_APP_NAME}"
   echo
-  if ${OPENSHIFT_JENKINS_CLIENT_DIR}/bin/jenkins_build ${OPENSHIFT_APP_NAME}
+  if ${OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR}/bin/jenkins_build ${OPENSHIFT_APP_NAME}
   then
       echo "New build has been deployed."
   else

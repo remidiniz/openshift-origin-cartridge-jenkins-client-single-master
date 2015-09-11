@@ -11,9 +11,9 @@ fi
 JENKINS_DNS_NAME=${OPENSHIFT_JENKINS_MASTER_URL:8} #remove https://
 
 #TODO Adjust this after configurable erb locations are added
-mv ${OPENSHIFT_JENKINS_CLIENT_DIR}/configuration/jenkins_job_template.xml.erb.hidden  ${OPENSHIFT_JENKINS_CLIENT_DIR}/configuration/jenkins_job_template.xml.erb
+mv ${OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR}/configuration/jenkins_job_template.xml.erb.hidden  ${OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR}/configuration/jenkins_job_template.xml.erb
 
-echo $JENKINS_PASSWORD > "$OPENSHIFT_JENKINS_CLIENT_DIR/.password"
+echo $JENKINS_PASSWORD > "$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR/.password"
 
 PLATFORM=`oo-gear-registry web|head -n 1|rev|cut -f 1 -d \,|rev`
 if [ -z "$PLATFORM" ]
@@ -28,9 +28,9 @@ then
 else
     if [ $PLATFORM == "windows" ]
     then
-        SHELL_COMMAND="$OPENSHIFT_JENKINS_CLIENT_DIR/metadata/jenkins_shell_command_windows"
+        SHELL_COMMAND="$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR/metadata/jenkins_shell_command_windows"
     else
-        SHELL_COMMAND="$OPENSHIFT_JENKINS_CLIENT_DIR/metadata/jenkins_shell_command"
+        SHELL_COMMAND="$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR/metadata/jenkins_shell_command"
     fi
 fi
 
@@ -38,20 +38,20 @@ if [ -f "${OPENSHIFT_PRIMARY_CARTRIDGE_DIR}/metadata/jenkins_artifacts_glob" ]
 then
     ARTIFACTS_GLOB="${OPENSHIFT_PRIMARY_CARTRIDGE_DIR}/metadata/jenkins_artifacts_glob"
 else
-    ARTIFACTS_GLOB="$OPENSHIFT_JENKINS_CLIENT_DIR/metadata/jenkins_artifacts_glob"
+    ARTIFACTS_GLOB="$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR/metadata/jenkins_artifacts_glob"
 fi
 
-JOB_NAME=${OPENSHIFT_APP_NAME}-build
+JOB_NAME=${OPENSHIFT_APP_NAME}
 
 BUILDER_TYPE=$(primary_cartridge_name)
 
-if out=$(${OPENSHIFT_JENKINS_CLIENT_DIR}/bin/jenkins_create_job "${OPENSHIFT_CLOUD_DOMAIN}" "$BUILDER_TYPE" "$SHELL_COMMAND" "$ARTIFACTS_GLOB" "$PLATFORM" 2>&1)
+if out=$(${OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR}/bin/jenkins_create_job "${OPENSHIFT_CLOUD_DOMAIN}" "$BUILDER_TYPE" "$SHELL_COMMAND" "$ARTIFACTS_GLOB" "$PLATFORM" 2>&1)
 then
     # Embedding success
     client_result ""
     client_result "Associated with job '${JOB_NAME}' in Jenkins server."
 else
-    if enable_out=$(${OPENSHIFT_JENKINS_CLIENT_DIR}/bin/jenkins_job_action enable 2>&1)
+    if enable_out=$(${OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR}/bin/jenkins_job_action enable 2>&1)
     then
         client_result ""
         client_result "Associated with job '${JOB_NAME}' in Jenkins server."
