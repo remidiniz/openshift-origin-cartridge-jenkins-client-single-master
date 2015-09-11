@@ -6,7 +6,7 @@ echo "https://ci-dev.webreliever.co.uk/" > $OPENSHIFT_HOME_DIR/jenkins-client-si
 echo "$OPENSHIFT_HOME_DIRjenkins-client-single-master/" > $OPENSHIFT_HOME_DIR/jenkins-client-single-master/env/OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR
 
 
-mkdir -p $OPENSHIFT_HOME_DIR/jenkins-client-single-master/{logs,data}
+mkdir -p $OPENSHIFT_HOME_DIRjenkins-client-single-master/{logs,data}
 
 
 
