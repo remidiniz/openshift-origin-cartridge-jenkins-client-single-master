@@ -6,7 +6,7 @@ Description: The Jenkins client connects to your Jenkins Master application and 
   and testing of your application.
 Version: '1'
 License: ASL 2.0
-Cartridge-Version: 0.0.15
+Cartridge-Version: 0.0.16
 Compatible-Versions:
 - 0.0.1
 - 0.0.2
