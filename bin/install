@@ -8,19 +8,8 @@ then
     exit 151
 fi
 
-# DEBUG --- begin
 
-
-
-echo "Jenkins Master URL: "${OPENSHIFT_JENKINS_MASTER_URL}
-echo "Jenkins Master Client Dir: "${OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR}
-echo "Jenkins Master Client Cartridge Dir: "${OPENSHIFT_PRIMARY_CARTRIDGE_DIR}
-echo pwd
-
-
-
-# DEBUG -- end
-
+echo "Connecting to Jenkins Master: "${OPENSHIFT_JENKINS_MASTER_URL}
 
 
 JENKINS_DNS_NAME=${OPENSHIFT_JENKINS_MASTER_URL:8} #remove https://
