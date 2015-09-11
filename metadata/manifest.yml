@@ -6,7 +6,7 @@ Description: The Jenkins client connects to your Jenkins Master application and 
   and testing of your application.
 Version: '1'
 License: ASL 2.0
-Cartridge-Version: 0.0.21
+Cartridge-Version: 0.0.22
 Compatible-Versions:
 - 0.0.1
 - 0.0.2
@@ -28,7 +28,7 @@ Cart-Data:
 - Key: job_url
   Type: cart_data
   Description: URL for the build job submitted on jenkins server
-Website: http://www.jenkins-ci.org
+Website: https://github.com/remidiniz/openshift-origin-cartridge-jenkins-client-single-master
 Help-Topics:
   Documentation: https://github.com/remidiniz/openshift-origin-cartridge-jenkins-client-single-master
 Provides:
