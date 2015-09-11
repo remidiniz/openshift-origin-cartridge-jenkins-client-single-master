@@ -2,14 +2,13 @@
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
-if [ -z "$JENKINS_URL" ]
+if [ -z "$OPENSHIFT_JENKINS_MASTER_URL" ]
 then
-    client_error "A Jenkins server does not exist in this domain!"
-    client_error "You must create a Jenkins server before installing this cartridge."
+    client_error "The $OPENSHIFT_JENKINS_MASTER_URL Jenkins server does not exist!"
     exit 151
 fi
 
-JENKINS_DNS_NAME=${JENKINS_URL:8} #remove https://
+JENKINS_DNS_NAME=${OPENSHIFT_JENKINS_MASTER_URL:8} #remove https://
 
 #TODO Adjust this after configurable erb locations are added
 mv ${OPENSHIFT_JENKINS_CLIENT_DIR}/configuration/jenkins_job_template.xml.erb.hidden  ${OPENSHIFT_JENKINS_CLIENT_DIR}/configuration/jenkins_job_template.xml.erb
@@ -74,4 +73,4 @@ else
     fi
 fi
 
-cart_props "job_url=${JENKINS_URL}job/${JOB_NAME}/"
+cart_props "job_url=${OPENSHIFT_JENKINS_MASTER_URL}job/${JOB_NAME}/"

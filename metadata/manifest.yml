@@ -1,11 +1,9 @@
 ---
 Name: jenkins-client
 Cartridge-Short-Name: JENKINS_CLIENT
-Display-Name: Jenkins Client
-Description: The Jenkins client connects to your Jenkins application and enables builds
-  and testing of your application. Requires that a Jenkins Server application exists
-  in your domain.  This can be created via the new application page. Based on Jenkins
-  Client 1.509+
+Display-Name: Jenkins Client Single Master
+Description: The Jenkins client connects to your Jenkins Master application and enables builds
+  and testing of your application.
 Version: '1'
 License: ASL 2.0
 Cartridge-Version: 0.0.13
@@ -22,7 +20,7 @@ Compatible-Versions:
 - 0.0.10
 - 0.0.11
 - 0.0.12
-Cartridge-Vendor: redhat
+Cartridge-Vendor: community
 Categories:
 - ci_builder
 - embedded
@@ -32,7 +30,7 @@ Cart-Data:
   Description: URL for the build job submitted on jenkins server
 Website: http://www.jenkins-ci.org
 Help-Topics:
-  Developer Center: https://www.openshift.com/developers
+  Documentation: https://github.com/remidiniz/openshift-origin-cartridge-jenkins-client-single-master
 Provides:
 - jenkins-client-1
 - jenkins-client

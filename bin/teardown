@@ -1,7 +1,7 @@
 #!/bin/bash
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
-if [ -n "$JENKINS_URL" ]
+if [ -n "$OPENSHIFT_JENKINS_MASTER_URL" ]
 then
   #
   # Disable job
@@ -12,7 +12,7 @@ then
       client_result ""
       client_result "The corresponding job '${OPENSHIFT_APP_NAME}-build' in Jenkins has been disabled."
       client_result "You can re-enable or delete as desired."
-      client_result "Job URL: ${JENKINS_URL}job/${OPENSHIFT_APP_NAME}-build/"
+      client_result "Job URL: ${OPENSHIFT_JENKINS_MASTER_URL}job/${OPENSHIFT_APP_NAME}-build/"
   else
       # An error occurred disabling existing job
       client_result ""

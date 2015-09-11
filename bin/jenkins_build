@@ -10,7 +10,7 @@ STDERR.sync = true
 Encoding.default_external = "utf-8"
 
 # Build constants from the environment.
-@hostname = ENV['JENKINS_URL'].split("/")[-1]
+@hostname = ENV['OPENSHIFT_JENKINS_MASTER_URL'].split("/")[-1]
 @username = ENV['JENKINS_USERNAME']
 @password = ENV['JENKINS_PASSWORD']
 @job_url = "/job/#{ENV['OPENSHIFT_APP_NAME']}-build"
