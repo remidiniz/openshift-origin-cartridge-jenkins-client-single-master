@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # Create additional directories required by JENKINS
-mkdir -p $OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR/{logs,data}
+mkdir -p ENV['OPENSHIFT_BASE_DIR']/jenkins-client-single-master/{logs,data}
 
 
 
