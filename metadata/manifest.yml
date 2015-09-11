@@ -32,13 +32,12 @@ Website: https://github.com/remidiniz/openshift-origin-cartridge-jenkins-client-
 Help-Topics:
   Documentation: https://github.com/remidiniz/openshift-origin-cartridge-jenkins-client-single-master
 Provides:
-- jenkins-client-single-master-1
 - jenkins-client-single-master
 Publishes: 
 Subscribes: 
 Group-Overrides:
 - components:
-  - jenkins-client-single-master-1
+  - jenkins-client-single-master
   - web_proxy
 Scaling:
   Min: 1
