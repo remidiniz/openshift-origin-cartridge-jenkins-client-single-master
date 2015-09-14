@@ -10,7 +10,7 @@ echo "typeYourJenkinsMasterUrl" > ${OPENSHIFT_HOMEDIR}jenkins-client-single-mast
 
 
 mkdir -p ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/{logs,data}
-#chmod 0755 -R "${OPENSHIFT_HOMEDIR}jenkins-client-single-master/bin/"
+chmod 0755 -R "${OPENSHIFT_HOMEDIR}jenkins-client-single-master/bin/"
 
 
 
