@@ -17,7 +17,7 @@ JENKINS_DNS_NAME=${OPENSHIFT_JENKINS_MASTER_URL:8} #remove https://
 #TODO Adjust this after configurable erb locations are added
 mv ${OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR}/configuration/jenkins_job_template.xml.erb.hidden  ${OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR}/configuration/jenkins_job_template.xml.erb
 
-echo $JENKINS_PASSWORD > "$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR/.password"
+echo $OPENSHIFT_JENKINS_MASTER_PASSWORD > "$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR/.password"
 
 PLATFORM=`oo-gear-registry web|head -n 1|rev|cut -f 1 -d \,|rev`
 if [ -z "$PLATFORM" ]
@@ -60,7 +60,7 @@ else
         client_result ""
         client_result "Associated with job '${JOB_NAME}' in Jenkins server."
         bldr_url="${JENKINS_DNS_NAME}computer/${OPENSHIFT_APP_NAME}bldr/"
-        status_code=`curl -s -w %{http_code} --output /dev/null --insecure https://${JENKINS_USERNAME}:${JENKINS_PASSWORD}@$bldr_url`
+        status_code=`curl -s -w %{http_code} --output /dev/null --insecure https://${OPENSHIFT_JENKINS_MASTER_USERNAME}:${OPENSHIFT_JENKINS_MASTER_PASSWORD}@$bldr_url`
         if [ "$status_code" == "200" ]
         then
             client_result "In addition we found an existing builder which you might also want"

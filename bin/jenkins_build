@@ -11,8 +11,8 @@ Encoding.default_external = "utf-8"
 
 # Build constants from the environment.
 @hostname = ENV['OPENSHIFT_JENKINS_MASTER_URL'].split("/")[-1]
-@username = ENV['JENKINS_USERNAME']
-@password = ENV['JENKINS_PASSWORD']
+@username = ENV['OPENSHIFT_JENKINS_MASTER_USERNAME']
+@password = ENV['OPENSHIFT_JENKINS_MASTER_PASSWORD']
 @job_url = "/job/#{ENV['OPENSHIFT_APP_NAME']}"
 
 # A list of recoverable HTTP error codes which should indicate
