@@ -45,7 +45,7 @@ else
     ARTIFACTS_GLOB="$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIRmetadata/jenkins_artifacts_glob"
 fi
 
-JOB_NAME=${OPENSHIFT_APP_NAME}
+JOB_NAME=${OPENSHIFT_NAMESPACE}-${OPENSHIFT_APP_NAME}
 
 BUILDER_TYPE=$(primary_cartridge_name)
 
@@ -59,7 +59,7 @@ else
     then
         client_result ""
         client_result "Associated with job '${JOB_NAME}' in Jenkins server."
-        bldr_url="${JENKINS_DNS_NAME}computer/${OPENSHIFT_APP_NAME}bldr/"
+        bldr_url="${JENKINS_DNS_NAME}computer/${OPENSHIFT_APP_NAME}-builder/"
         status_code=`curl -s -w %{http_code} --output /dev/null --insecure https://${OPENSHIFT_JENKINS_MASTER_USERNAME}:${OPENSHIFT_JENKINS_MASTER_PASSWORD}@$bldr_url`
         if [ "$status_code" == "200" ]
         then
