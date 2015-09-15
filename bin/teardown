@@ -10,13 +10,13 @@ then
   then
       # Existing job was disabled
       client_result ""
-      client_result "The corresponding job '${OPENSHIFT_APP_NAME}' in Jenkins has been disabled."
+      client_result "The corresponding job '${OPENSHIFT_NAMESPACE}-${OPENSHIFT_APP_NAME}' in Jenkins has been disabled."
       client_result "You can re-enable or delete as desired."
-      client_result "Job URL: ${OPENSHIFT_JENKINS_MASTER_URL}job/${OPENSHIFT_APP_NAME}/"
+      client_result "Job URL: ${OPENSHIFT_JENKINS_MASTER_URL}job/${OPENSHIFT_NAMESPACE}-${OPENSHIFT_APP_NAME}/"
   else
       # An error occurred disabling existing job
       client_result ""
-      client_result "Could not disable job '${OPENSHIFT_APP_NAME}' in Jenkins server:"
+      client_result "Could not disable job '${OPENSHIFT_NAMESPACE}-${OPENSHIFT_APP_NAME}' in Jenkins server:"
       client_result "   $out"
       client_result "Continuing anyway."
   fi

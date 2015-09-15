@@ -4,7 +4,7 @@ STDOUT.sync = true
 STDERR.sync = true
 
 @hostname = ENV['OPENSHIFT_JENKINS_MASTER_URL'].split("/")[-1].downcase
-@job_url = "/job/#{ENV['OPENSHIFT_APP_NAME']}"
+@job_url = "/job/#{ENV['OPENSHIFT_NAMESPACE']}" + "-" + ENV['OPENSHIFT_APP_NAME']
 @action = ARGV[0]
 
 def job_action

@@ -11,7 +11,7 @@ STDERR.sync = true
 
 @hostname = ENV['OPENSHIFT_JENKINS_MASTER_URL'].split("/")[-1].downcase
 @data_dir = ENV['OPENSHIFT_DATA_DIR']
-@job_name = "#{ENV['OPENSHIFT_APP_NAME']}"
+@job_name = "#{ENV['OPENSHIFT_NAMESPACE']}" + "-" + ENV['OPENSHIFT_APP_NAME']
 @job_url = "/job/#{@job_name}"
 @app_name = ENV['OPENSHIFT_APP_NAME']
 @uuid = ENV['OPENSHIFT_GEAR_UUID']
