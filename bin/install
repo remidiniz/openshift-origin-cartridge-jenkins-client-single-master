@@ -17,7 +17,7 @@ JENKINS_DNS_NAME=${OPENSHIFT_JENKINS_MASTER_URL:8} #remove https://
 #TODO Adjust this after configurable erb locations are added
 mv ${OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR}configuration/jenkins_job_template.xml.erb.hidden  ${OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR}configuration/jenkins_job_template.xml.erb
 
-echo $OPENSHIFT_JENKINS_MASTER_PASSWORD > "$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR.password"
+#echo $OPENSHIFT_JENKINS_MASTER_PASSWORD > "$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR.password"
 
 PLATFORM=`oo-gear-registry web|head -n 1|rev|cut -f 1 -d \,|rev`
 if [ -z "$PLATFORM" ]
