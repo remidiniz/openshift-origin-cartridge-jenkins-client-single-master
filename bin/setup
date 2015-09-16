@@ -7,6 +7,10 @@ echo "typeYourPassword" > ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/env/O
 echo "typeYourJenkinsMasterUrl" > ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/env/OPENSHIFT_JENKINS_MASTER_URL
 
 
+
+echo ${OPENSHIFT_HOMEDIR}metadata/jenkins_shell_command > ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/env/OPENSHIFT_JENKINS_MASTER_CLIENT_DIR
+
+
 mkdir -p ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/{logs,data}
 #touch ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/.password
 #chmod 0777 "${OPENSHIFT_HOMEDIR}jenkins-client-single-master/.password"
