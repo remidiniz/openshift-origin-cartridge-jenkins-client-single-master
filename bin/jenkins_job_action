@@ -7,6 +7,7 @@ STDERR.sync = true
 @job_url = "/job/#{ENV['OPENSHIFT_NAMESPACE']}" + "-" + ENV['OPENSHIFT_APP_NAME']
 @action = ARGV[0]
 
+
 def job_action
   status_code = `curl -s -w %{http_code} --output /dev/null -X POST --insecure https://${OPENSHIFT_JENKINS_MASTER_USERNAME}:${OPENSHIFT_JENKINS_MASTER_PASSWORD}@#{@hostname}#{@job_url}/#{@action}`
 
