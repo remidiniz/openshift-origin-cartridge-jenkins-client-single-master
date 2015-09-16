@@ -14,4 +14,5 @@ mkdir -p ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/{logs,data}
 #touch ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/.password
 #chmod 0777 "${OPENSHIFT_HOMEDIR}jenkins-client-single-master/.password"
 chmod 0755 -R "${OPENSHIFT_HOMEDIR}jenkins-client-single-master/bin/"
-chmod 0755 -R "${OPENSHIFT_HOMEDIR}jenkins-client-single-master/metadata/"
+chmod 0755 "${OPENSHIFT_HOMEDIR}jenkins-client-single-master/metadata/"
+chmod 0755 "${OPENSHIFT_HOMEDIR}jenkins-client-single-master/metadata/jenkins*"
