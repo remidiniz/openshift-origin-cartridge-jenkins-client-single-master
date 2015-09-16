@@ -7,7 +7,6 @@ echo "typeYourPassword" > ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/env/O
 echo "typeYourJenkinsMasterUrl" > ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/env/OPENSHIFT_JENKINS_MASTER_URL
 
 
-
 echo ${OPENSHIFT_HOMEDIR}metadata/jenkins_shell_command > ${OPENSHIFT_HOMEDIR}jenkins-client-single-master/env/OPENSHIFT_JENKINS_MASTER_CLIENT_DIR
 
 
