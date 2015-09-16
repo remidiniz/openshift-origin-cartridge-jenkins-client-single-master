@@ -32,9 +32,9 @@ then
 else
     if [ $PLATFORM == "windows" ]
     then
-        SHELL_COMMAND="$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIRmetadata/jenkins_shell_command_windows"
+        SHELL_COMMAND="$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR/metadata/jenkins_shell_command_windows"
     else
-        SHELL_COMMAND="$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIRmetadata/jenkins_shell_command"
+        SHELL_COMMAND="$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR/metadata/jenkins_shell_command"
     fi
 fi
 

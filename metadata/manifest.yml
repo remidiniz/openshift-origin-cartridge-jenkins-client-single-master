@@ -6,7 +6,7 @@ Description: The Jenkins client connects to your Jenkins Master application and 
   and testing of your application.
 Version: '1'
 License: ASL 2.0
-Cartridge-Version: 0.0.39
+Cartridge-Version: 0.0.40
 Source-Url: https://github.com/remidiniz/openshift-origin-cartridge-jenkins-client-single-master/archive/master.tar.gz
 Compatible-Versions:
 - 0.0.1
