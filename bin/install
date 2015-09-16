@@ -42,7 +42,7 @@ if [ -f "${OPENSHIFT_PRIMARY_CARTRIDGE_DIR}/metadata/jenkins_artifacts_glob" ]
 then
     ARTIFACTS_GLOB="${OPENSHIFT_PRIMARY_CARTRIDGE_DIR}/metadata/jenkins_artifacts_glob"
 else
-    ARTIFACTS_GLOB="$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIRmetadata/jenkins_artifacts_glob"
+    ARTIFACTS_GLOB="$OPENSHIFT_JENKINS_SINGLE_MASTER_CLIENT_DIR/metadata/jenkins_artifacts_glob"
 fi
 
 JOB_NAME=${OPENSHIFT_NAMESPACE}-${OPENSHIFT_APP_NAME}
